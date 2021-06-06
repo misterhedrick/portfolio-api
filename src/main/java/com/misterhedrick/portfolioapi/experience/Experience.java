@@ -1,5 +1,7 @@
 package com.misterhedrick.portfolioapi.experience;
 
+import com.misterhedrick.portfolioapi.highlight.Highlight;
+
 import javax.persistence.*;
 import java.sql.Array;
 import java.util.List;
@@ -13,6 +15,8 @@ public class Experience {
     private String dates;
     private String title;
     private String employer;
+    @OneToMany(mappedBy = "experience", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Highlight> highlights;
 
 
     public Experience() {
@@ -30,6 +34,7 @@ public class Experience {
                 ", dates='" + dates + '\'' +
                 ", title='" + title + '\'' +
                 ", employer='" + employer + '\'' +
+                ", highlights=" + highlights +
                 '}';
     }
 
@@ -63,6 +68,14 @@ public class Experience {
 
     public void setEmployer(String employer) {
         this.employer = employer;
+    }
+
+    public List<Highlight> getHighlights() {
+        return highlights;
+    }
+
+    public void setHighlights(List<Highlight> highlights) {
+        this.highlights = highlights;
     }
 }
 
