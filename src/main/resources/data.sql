@@ -39,5 +39,4 @@
     (13, 3, 'Developed java functions for odmove.com and odfl.com Front-end'),
     (14, 4, 'Custom setups and mapping EDI Data'),
     (15, 4, 'Interact directly with customers for communications solutions'),
-    (16, 4, 'Migrate all EDI setups over to Extol software' ||
-     '');
+    (16, 4, 'Migrate all EDI setups over to Extol software');
